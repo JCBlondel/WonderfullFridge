@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: WonderfullFridge_development
+
+test:
+  <<: *default
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: WonderfullFridge_test
+
+production:
+  <<: *default
+  database: WonderfullFridge_production
