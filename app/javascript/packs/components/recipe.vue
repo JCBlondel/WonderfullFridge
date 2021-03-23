@@ -53,7 +53,4 @@
 </script>
 
 <style>
-.multiline {
-  white-space: pre-wrap;
-}
 </style>
